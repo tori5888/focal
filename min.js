@@ -12,7 +12,7 @@ const flightPrices = [1260, 490, 599, 1400, 820];
 console.log(`The cheapest flight amongst $1260, $490, $599, $1400 and $820 costs \$${min(flightPrices)}`);
 
 const golfScores = [-1, 3, 0, -4, 1, 4, -2];
-console.log(`The winning golf score amongst -1, 3, 0, -4, 1, 4 and 1 is ${min(golfScores)}`);
+console.log(`The winning golf score amongst -1, 3, 0, -4, 1, 4 and -2 is ${min(golfScores)}`);
 
 const pageNumbers = [232];
 console.log(`The shortest book out of a list of single book with 232 pages has ${min(pageNumbers)} pages`);
