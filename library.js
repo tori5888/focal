@@ -21,7 +21,7 @@ const library = {
                       tracks: ["t03"]
                     }
              }
-}
+};
 
 // FUNCTIONS TO IMPLEMENT:
 
