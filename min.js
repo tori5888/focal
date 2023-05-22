@@ -1,5 +1,15 @@
-const min = function(numbers) {
-  // Write code here that returns the smallest value in numbers
+
+
+function min(numbers) {
+  // Check if the array is empty
+  if (numbers.length === 0) {
+    return undefined; // or any other appropriate value
+  }
+
+  // Find the minimum value using Math.min()
+  const smallest = Math.min(...numbers);
+
+  return smallest;
 }
 
 
