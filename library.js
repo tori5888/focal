@@ -37,34 +37,70 @@ const library = {
 // FUNCTIONS TO IMPLEMENT:
 /////////////////////////////
 
+
+
+
 // prints a list of all playlists, in the form:
 // p01: Coding Music - 2 tracks
 // p02: Other Playlist - 1 tracks
 const printPlaylists = function() {
+  // Iterate through each playlist in the library
   for (const playlistId in library.playlists) {
     const playlist = library.playlists[playlistId];
+    // Print the playlist ID, name, and number of tracks
     console.log(`${playlist.id}: ${playlist.name} - ${playlist.tracks.length} tracks`);
   }
 };
-// print playlists
+// Call the printPlaylists function to display the playlists
 printPlaylists();
+
+
+
+
 
 // prints a list of all tracks, using the following format:
 // t01: Code Monkey by Jonathan Coulton (Thing a Week Three)
 // t02: Model View Controller by James Dempsey (WWDC 2003)
 // t03: Four Thirty-Three by John Cage (Woodstock 1952)
 const printTracks = function() {
+  // Loop through each track in the library's tracks object
+  for (const trackId in library.tracks) {
+    // Get the track object for the current trackId
+    const track = library.tracks[trackId];
 
+    // Print the track information in the specified format
+    console.log(`${track.id}: ${track.name} by ${track.artist} (${track.album})`);
+  }
 };
+// Call the printTracks function to display the tracks
+printTracks();
+
 
 
 // prints a list of tracks for a given playlist, using the following format:
 // p01: Coding Music - 2 tracks
 // t01: Code Monkey by Jonathan Coulton (Thing a Week Three)
 // t02: Model View Controller by James Dempsey (WWDC 2003)
-const printPlaylist = function(playlistId) {
 
+const printPlaylist = function(playlistId) {
+  // Get the playlist object for the given playlistId
+  const playlist = library.playlists[playlistId];
+
+  // Print the playlist information in the specified format
+  console.log(`${playlist.id}: ${playlist.name} - ${playlist.tracks.length} tracks`);
+
+  // Loop through each track in the playlist's tracks array
+  for (const trackId of playlist.tracks) {
+    // Get the track object for the current trackId
+    const track = library.tracks[trackId];
+
+    // Print the track information in the specified format
+    console.log(`${track.id}: ${track.name} by ${track.artist} (${track.album})`);
+  }
 };
+printPlaylist('p01');
+
+
 
 
 // adds an existing track to an existing playlist
