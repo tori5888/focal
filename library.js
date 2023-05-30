@@ -125,9 +125,25 @@ const generateUid = function() {
 };
 
 
+
+
 // adds a track to the library
 const addTrack = function(name, artist, album) {
+  // Generate a unique ID for the new track
+  const trackId = generateUid();
 
+  // Create a new track object
+  const newTrack = {
+    id: trackId,
+    name: name,
+    artist: artist,
+    album: album
+  };
+
+  // Add the new track to the library
+  library.tracks[trackId] = newTrack;
+
+  console.log(`Track '${name}' by ${artist} (${album}) added to the library.`);
 };
 
 
@@ -135,6 +151,7 @@ const addTrack = function(name, artist, album) {
 const addPlaylist = function(name) {
 
 };
+addTrack("New Song", "New Artist", "New Album");
 
 
 // STRETCH:
