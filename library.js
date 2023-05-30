@@ -52,7 +52,7 @@ const printPlaylists = function() {
   }
 };
 // Call the printPlaylists function to display the playlists
-printPlaylists();
+
 
 
 
@@ -73,7 +73,7 @@ const printTracks = function() {
   }
 };
 // Call the printTracks function to display the tracks
-printTracks();
+
 
 
 
@@ -97,7 +97,6 @@ const printPlaylist = function(playlistId) {
     console.log(`${track.id}: ${track.name} by ${track.artist} (${track.album})`);
   }
 };
-printPlaylist("p01");
 
 
 
@@ -149,9 +148,27 @@ const addTrack = function(name, artist, album) {
 
 // adds a playlist to the library
 const addPlaylist = function(name) {
+  // Generate a unique ID for the new playlist
+  const playlistId = generateUid();
 
+  // Create a new playlist object
+  const newPlaylist = {
+    id: playlistId,
+    name: name,
+    tracks: []
+  };
+
+  // Add the new playlist to the library
+  library.playlists[playlistId] = newPlaylist;
+
+  console.log(`Playlist '${name}' added to the library.`);
 };
+
+printPlaylists();
+printTracks();
+printPlaylist("p01");
 addTrack("New Song", "New Artist", "New Album");
+addPlaylist("New Playlist");
 
 
 // STRETCH:
